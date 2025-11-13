@@ -3337,3 +3337,52 @@
 [2025-11-13T05:04:45.178+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:04:45.177+0000] {dag.py:3036} INFO - Sync 1 DAGs
 [2025-11-13T05:04:45.191+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:04:45.191+0000] {dag.py:3823} INFO - Setting next_dagrun for erp_to_minio_bronze to 2025-11-13 00:00:00+00:00, run_after=2025-11-13 06:00:00+00:00
 [2025-11-13T05:04:45.206+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/erp_to_minio_bronze_dag.py took 0.111 seconds
+[2025-11-13T05:05:15.387+0000] {processor.py:161} INFO - Started process (PID=16478) to work on /opt/airflow/dags/erp_to_minio_bronze_dag.py
+[2025-11-13T05:05:15.388+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/erp_to_minio_bronze_dag.py for tasks to queue
+[2025-11-13T05:05:15.389+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:05:15.389+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/erp_to_minio_bronze_dag.py
+[2025-11-13T05:05:15.444+0000] {processor.py:840} INFO - DAG(s) 'erp_to_minio_bronze' retrieved from /opt/airflow/dags/erp_to_minio_bronze_dag.py
+[2025-11-13T05:05:15.458+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:05:15.458+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-13T05:05:15.470+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:05:15.470+0000] {dag.py:3823} INFO - Setting next_dagrun for erp_to_minio_bronze to 2025-11-13 00:00:00+00:00, run_after=2025-11-13 06:00:00+00:00
+[2025-11-13T05:05:15.488+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/erp_to_minio_bronze_dag.py took 0.103 seconds
+[2025-11-13T05:05:45.639+0000] {processor.py:161} INFO - Started process (PID=16480) to work on /opt/airflow/dags/erp_to_minio_bronze_dag.py
+[2025-11-13T05:05:45.640+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/erp_to_minio_bronze_dag.py for tasks to queue
+[2025-11-13T05:05:45.641+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:05:45.641+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/erp_to_minio_bronze_dag.py
+[2025-11-13T05:05:45.688+0000] {processor.py:840} INFO - DAG(s) 'erp_to_minio_bronze' retrieved from /opt/airflow/dags/erp_to_minio_bronze_dag.py
+[2025-11-13T05:05:45.702+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:05:45.702+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-13T05:05:45.714+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:05:45.713+0000] {dag.py:3823} INFO - Setting next_dagrun for erp_to_minio_bronze to 2025-11-13 00:00:00+00:00, run_after=2025-11-13 06:00:00+00:00
+[2025-11-13T05:05:45.730+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/erp_to_minio_bronze_dag.py took 0.093 seconds
+[2025-11-13T05:06:15.918+0000] {processor.py:161} INFO - Started process (PID=16482) to work on /opt/airflow/dags/erp_to_minio_bronze_dag.py
+[2025-11-13T05:06:15.919+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/erp_to_minio_bronze_dag.py for tasks to queue
+[2025-11-13T05:06:15.920+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:06:15.920+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/erp_to_minio_bronze_dag.py
+[2025-11-13T05:06:15.984+0000] {processor.py:840} INFO - DAG(s) 'erp_to_minio_bronze' retrieved from /opt/airflow/dags/erp_to_minio_bronze_dag.py
+[2025-11-13T05:06:15.998+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:06:15.997+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-13T05:06:16.008+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:06:16.008+0000] {dag.py:3823} INFO - Setting next_dagrun for erp_to_minio_bronze to 2025-11-13 00:00:00+00:00, run_after=2025-11-13 06:00:00+00:00
+[2025-11-13T05:06:16.022+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/erp_to_minio_bronze_dag.py took 0.106 seconds
+[2025-11-13T05:06:46.171+0000] {processor.py:161} INFO - Started process (PID=16484) to work on /opt/airflow/dags/erp_to_minio_bronze_dag.py
+[2025-11-13T05:06:46.171+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/erp_to_minio_bronze_dag.py for tasks to queue
+[2025-11-13T05:06:46.172+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:06:46.172+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/erp_to_minio_bronze_dag.py
+[2025-11-13T05:06:46.225+0000] {processor.py:840} INFO - DAG(s) 'erp_to_minio_bronze' retrieved from /opt/airflow/dags/erp_to_minio_bronze_dag.py
+[2025-11-13T05:06:46.239+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:06:46.239+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-13T05:06:46.251+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:06:46.251+0000] {dag.py:3823} INFO - Setting next_dagrun for erp_to_minio_bronze to 2025-11-13 00:00:00+00:00, run_after=2025-11-13 06:00:00+00:00
+[2025-11-13T05:06:46.267+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/erp_to_minio_bronze_dag.py took 0.099 seconds
+[2025-11-13T05:07:16.452+0000] {processor.py:161} INFO - Started process (PID=16486) to work on /opt/airflow/dags/erp_to_minio_bronze_dag.py
+[2025-11-13T05:07:16.454+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/erp_to_minio_bronze_dag.py for tasks to queue
+[2025-11-13T05:07:16.455+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:07:16.454+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/erp_to_minio_bronze_dag.py
+[2025-11-13T05:07:16.513+0000] {processor.py:840} INFO - DAG(s) 'erp_to_minio_bronze' retrieved from /opt/airflow/dags/erp_to_minio_bronze_dag.py
+[2025-11-13T05:07:16.526+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:07:16.526+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-13T05:07:16.537+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:07:16.537+0000] {dag.py:3823} INFO - Setting next_dagrun for erp_to_minio_bronze to 2025-11-13 00:00:00+00:00, run_after=2025-11-13 06:00:00+00:00
+[2025-11-13T05:07:16.553+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/erp_to_minio_bronze_dag.py took 0.103 seconds
+[2025-11-13T05:07:46.709+0000] {processor.py:161} INFO - Started process (PID=16488) to work on /opt/airflow/dags/erp_to_minio_bronze_dag.py
+[2025-11-13T05:07:46.710+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/erp_to_minio_bronze_dag.py for tasks to queue
+[2025-11-13T05:07:46.711+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:07:46.711+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/erp_to_minio_bronze_dag.py
+[2025-11-13T05:07:46.769+0000] {processor.py:840} INFO - DAG(s) 'erp_to_minio_bronze' retrieved from /opt/airflow/dags/erp_to_minio_bronze_dag.py
+[2025-11-13T05:07:46.782+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:07:46.781+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-13T05:07:46.793+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:07:46.792+0000] {dag.py:3823} INFO - Setting next_dagrun for erp_to_minio_bronze to 2025-11-13 00:00:00+00:00, run_after=2025-11-13 06:00:00+00:00
+[2025-11-13T05:07:46.810+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/erp_to_minio_bronze_dag.py took 0.104 seconds
+[2025-11-13T05:08:16.963+0000] {processor.py:161} INFO - Started process (PID=16490) to work on /opt/airflow/dags/erp_to_minio_bronze_dag.py
+[2025-11-13T05:08:16.965+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/erp_to_minio_bronze_dag.py for tasks to queue
+[2025-11-13T05:08:16.966+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:08:16.965+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/erp_to_minio_bronze_dag.py
+[2025-11-13T05:08:17.024+0000] {processor.py:840} INFO - DAG(s) 'erp_to_minio_bronze' retrieved from /opt/airflow/dags/erp_to_minio_bronze_dag.py
+[2025-11-13T05:08:17.040+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:08:17.040+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-13T05:08:17.053+0000] {logging_mixin.py:188} INFO - [2025-11-13T05:08:17.052+0000] {dag.py:3823} INFO - Setting next_dagrun for erp_to_minio_bronze to 2025-11-13 00:00:00+00:00, run_after=2025-11-13 06:00:00+00:00
+[2025-11-13T05:08:17.071+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/erp_to_minio_bronze_dag.py took 0.110 seconds
