@@ -1,0 +1,5 @@
+# Airflow logs
+airflow/logs/
+
+# Dados do MinIO (apenas o que é gerado em runtime)
+infra/minio/data/
