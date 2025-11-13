@@ -4407,3 +4407,66 @@ File Path                                           PID    Runtime      # DAGs  
 ================================================================================
 [2025-11-13T05:05:06.502+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
 [2025-11-13T05:05:06.560+0000] {manager.py:741} INFO - There are 2 files in /opt/airflow/dags
+[2025-11-13T05:05:33.777+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/erp_to_minio_bronze_dag.py                                 1           0  0.20s           2025-11-13T05:05:15
+/opt/airflow/dags/transform_silver_gold_dbt_dag.py                           1           0  0.11s           2025-11-13T05:05:33
+================================================================================
+[2025-11-13T05:06:04.051+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/erp_to_minio_bronze_dag.py                                 1           0  0.20s           2025-11-13T05:05:45
+/opt/airflow/dags/transform_silver_gold_dbt_dag.py                           1           0  0.10s           2025-11-13T05:06:04
+================================================================================
+[2025-11-13T05:06:34.422+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/erp_to_minio_bronze_dag.py                                 1           0  0.20s           2025-11-13T05:06:16
+/opt/airflow/dags/transform_silver_gold_dbt_dag.py                           1           0  0.20s           2025-11-13T05:06:34
+================================================================================
+[2025-11-13T05:07:04.560+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/erp_to_minio_bronze_dag.py                                 1           0  0.20s           2025-11-13T05:06:46
+/opt/airflow/dags/transform_silver_gold_dbt_dag.py                           1           0  0.10s           2025-11-13T05:07:04
+================================================================================
+[2025-11-13T05:07:34.837+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/erp_to_minio_bronze_dag.py                                 1           0  0.20s           2025-11-13T05:07:16
+/opt/airflow/dags/transform_silver_gold_dbt_dag.py                           1           0  0.10s           2025-11-13T05:07:34
+================================================================================
+[2025-11-13T05:08:05.089+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/erp_to_minio_bronze_dag.py                                 1           0  0.20s           2025-11-13T05:07:46
+/opt/airflow/dags/transform_silver_gold_dbt_dag.py                           1           0  0.10s           2025-11-13T05:08:05
+================================================================================
+[2025-11-13T05:08:35.364+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/erp_to_minio_bronze_dag.py                                 1           0  0.20s           2025-11-13T05:08:17
+/opt/airflow/dags/transform_silver_gold_dbt_dag.py                           1           0  0.11s           2025-11-13T05:08:35
+================================================================================
