@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: "Dimension table exposing customer master data."
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+  - name: dim_product
+    description: "Dimension table for the product catalog."
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+  - name: fct_orders
+    description: "Fact table summarizing orders, payments, and item level metrics."
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - relationships:
+              to: ref('dim_customer')
+              field: customer_id

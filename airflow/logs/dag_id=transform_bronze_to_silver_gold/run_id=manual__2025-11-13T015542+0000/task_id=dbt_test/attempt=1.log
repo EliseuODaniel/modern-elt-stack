@@ -1,0 +1,70 @@
+[2025-11-13T01:55:54.919+0000] {logging_mixin.py:188} INFO - Changing /opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:55:42+00:00/task_id=dbt_test permission to 509
+[2025-11-13T01:55:54.920+0000] {logging_mixin.py:188} INFO - Failed to change /opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:55:42+00:00/task_id=dbt_test permission to 509: [Errno 1] Operation not permitted: '/opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:55:42+00:00/task_id=dbt_test'
+[2025-11-13T01:55:54.947+0000] {logging_mixin.py:188} INFO - Changing /opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:55:42+00:00/task_id=dbt_test permission to 509
+[2025-11-13T01:55:54.948+0000] {logging_mixin.py:188} INFO - Failed to change /opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:55:42+00:00/task_id=dbt_test permission to 509: [Errno 1] Operation not permitted: '/opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:55:42+00:00/task_id=dbt_test'
+[2025-11-13T01:55:54.977+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: transform_bronze_to_silver_gold.dbt_test manual__2025-11-13T01:55:42+00:00 [queued]>
+[2025-11-13T01:55:54.980+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: transform_bronze_to_silver_gold.dbt_test manual__2025-11-13T01:55:42+00:00 [queued]>
+[2025-11-13T01:55:54.980+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-11-13T01:55:54.987+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): dbt_test> on 2025-11-13 01:55:42+00:00
+[2025-11-13T01:55:54.991+0000] {standard_task_runner.py:60} INFO - Started process 8791 to run task
+[2025-11-13T01:55:54.993+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'transform_bronze_to_silver_gold', 'dbt_test', 'manual__2025-11-13T01:55:42+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/transform_silver_gold_dbt_dag.py', '--cfg-path', '/tmp/tmp8p37fqrx']
+[2025-11-13T01:55:54.994+0000] {standard_task_runner.py:88} INFO - Job 24: Subtask dbt_test
+[2025-11-13T01:55:55.014+0000] {logging_mixin.py:188} INFO - Changing /opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:55:42+00:00/task_id=dbt_test permission to 509
+[2025-11-13T01:55:55.015+0000] {logging_mixin.py:188} INFO - Failed to change /opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:55:42+00:00/task_id=dbt_test permission to 509: [Errno 1] Operation not permitted: '/opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:55:42+00:00/task_id=dbt_test'
+[2025-11-13T01:55:55.032+0000] {task_command.py:423} INFO - Running <TaskInstance: transform_bronze_to_silver_gold.dbt_test manual__2025-11-13T01:55:42+00:00 [running]> on host 2fa63170b6f2
+[2025-11-13T01:55:55.061+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-platform' AIRFLOW_CTX_DAG_ID='transform_bronze_to_silver_gold' AIRFLOW_CTX_TASK_ID='dbt_test' AIRFLOW_CTX_EXECUTION_DATE='2025-11-13T01:55:42+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-13T01:55:42+00:00'
+[2025-11-13T01:55:55.062+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-13T01:55:55.063+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/airflow/dbt && export DBT_PROFILES_DIR=/opt/airflow/dbt && /home/airflow/.local/bin/dbt test']
+[2025-11-13T01:55:55.069+0000] {subprocess.py:86} INFO - Output:
+[2025-11-13T01:55:56.171+0000] {subprocess.py:93} INFO - [0m01:55:56  Running with dbt=1.7.9
+[2025-11-13T01:55:56.363+0000] {subprocess.py:93} INFO - [0m01:55:56  Registered adapter: duckdb=1.7.2
+[2025-11-13T01:55:56.743+0000] {subprocess.py:93} INFO - [0m01:55:56  Found 12 models, 18 tests, 0 sources, 0 exposures, 0 metrics, 391 macros, 0 groups, 0 semantic models
+[2025-11-13T01:55:56.749+0000] {subprocess.py:93} INFO - [0m01:55:56
+[2025-11-13T01:55:56.905+0000] {subprocess.py:93} INFO - [0m01:55:56  Concurrency: 4 threads (target='dev')
+[2025-11-13T01:55:56.907+0000] {subprocess.py:93} INFO - [0m01:55:56
+[2025-11-13T01:55:56.917+0000] {subprocess.py:93} INFO - [0m01:55:56  1 of 18 START test not_null_dim_customer_customer_id ........................... [RUN]
+[2025-11-13T01:55:56.918+0000] {subprocess.py:93} INFO - [0m01:55:56  2 of 18 START test not_null_dim_product_product_id ............................. [RUN]
+[2025-11-13T01:55:56.920+0000] {subprocess.py:93} INFO - [0m01:55:56  3 of 18 START test not_null_fct_orders_order_id ................................ [RUN]
+[2025-11-13T01:55:56.921+0000] {subprocess.py:93} INFO - [0m01:55:56  4 of 18 START test not_null_silver_customers_customer_id ....................... [RUN]
+[2025-11-13T01:55:57.110+0000] {subprocess.py:93} INFO - [0m01:55:57  1 of 18 PASS not_null_dim_customer_customer_id ................................. [[32mPASS[0m in 0.19s]
+[2025-11-13T01:55:57.113+0000] {subprocess.py:93} INFO - [0m01:55:57  3 of 18 PASS not_null_fct_orders_order_id ...................................... [[32mPASS[0m in 0.19s]
+[2025-11-13T01:55:57.121+0000] {subprocess.py:93} INFO - [0m01:55:57  2 of 18 PASS not_null_dim_product_product_id ................................... [[32mPASS[0m in 0.20s]
+[2025-11-13T01:55:57.129+0000] {subprocess.py:93} INFO - [0m01:55:57  4 of 18 PASS not_null_silver_customers_customer_id ............................. [[32mPASS[0m in 0.20s]
+[2025-11-13T01:55:57.132+0000] {subprocess.py:93} INFO - [0m01:55:57  5 of 18 START test not_null_silver_order_items_order_item_id ................... [RUN]
+[2025-11-13T01:55:57.136+0000] {subprocess.py:93} INFO - [0m01:55:57  6 of 18 START test not_null_silver_orders_order_id ............................. [RUN]
+[2025-11-13T01:55:57.142+0000] {subprocess.py:93} INFO - [0m01:55:57  7 of 18 START test not_null_silver_products_product_id ......................... [RUN]
+[2025-11-13T01:55:57.145+0000] {subprocess.py:93} INFO - [0m01:55:57  8 of 18 START test relationships_fct_orders_customer_id__customer_id__ref_dim_customer_  [RUN]
+[2025-11-13T01:55:57.300+0000] {subprocess.py:93} INFO - [0m01:55:57  5 of 18 PASS not_null_silver_order_items_order_item_id ......................... [[32mPASS[0m in 0.16s]
+[2025-11-13T01:55:57.304+0000] {subprocess.py:93} INFO - [0m01:55:57  7 of 18 PASS not_null_silver_products_product_id ............................... [[32mPASS[0m in 0.16s]
+[2025-11-13T01:55:57.304+0000] {subprocess.py:93} INFO - [0m01:55:57  6 of 18 PASS not_null_silver_orders_order_id ................................... [[32mPASS[0m in 0.16s]
+[2025-11-13T01:55:57.309+0000] {subprocess.py:93} INFO - [0m01:55:57  9 of 18 START test relationships_silver_order_items_order_id__order_id__ref_silver_orders_  [RUN]
+[2025-11-13T01:55:57.313+0000] {subprocess.py:93} INFO - [0m01:55:57  10 of 18 START test relationships_silver_order_items_product_id__product_id__ref_silver_products_  [RUN]
+[2025-11-13T01:55:57.315+0000] {subprocess.py:93} INFO - [0m01:55:57  11 of 18 START test relationships_silver_orders_customer_id__customer_id__ref_silver_customers_  [RUN]
+[2025-11-13T01:55:57.389+0000] {subprocess.py:93} INFO - [0m01:55:57  8 of 18 PASS relationships_fct_orders_customer_id__customer_id__ref_dim_customer_  [[32mPASS[0m in 0.24s]
+[2025-11-13T01:55:57.398+0000] {subprocess.py:93} INFO - [0m01:55:57  12 of 18 START test unique_dim_customer_customer_id ............................ [RUN]
+[2025-11-13T01:55:57.536+0000] {subprocess.py:93} INFO - [0m01:55:57  12 of 18 PASS unique_dim_customer_customer_id .................................. [[32mPASS[0m in 0.11s]
+[2025-11-13T01:55:57.541+0000] {subprocess.py:93} INFO - [0m01:55:57  13 of 18 START test unique_dim_product_product_id .............................. [RUN]
+[2025-11-13T01:55:57.556+0000] {subprocess.py:93} INFO - [0m01:55:57  9 of 18 PASS relationships_silver_order_items_order_id__order_id__ref_silver_orders_  [[32mPASS[0m in 0.24s]
+[2025-11-13T01:55:57.567+0000] {subprocess.py:93} INFO - [0m01:55:57  14 of 18 START test unique_fct_orders_order_id ................................. [RUN]
+[2025-11-13T01:55:57.569+0000] {subprocess.py:93} INFO - [0m01:55:57  11 of 18 PASS relationships_silver_orders_customer_id__customer_id__ref_silver_customers_  [[32mPASS[0m in 0.25s]
+[2025-11-13T01:55:57.575+0000] {subprocess.py:93} INFO - [0m01:55:57  10 of 18 PASS relationships_silver_order_items_product_id__product_id__ref_silver_products_  [[32mPASS[0m in 0.26s]
+[2025-11-13T01:55:57.589+0000] {subprocess.py:93} INFO - [0m01:55:57  15 of 18 START test unique_silver_customers_customer_id ........................ [RUN]
+[2025-11-13T01:55:57.590+0000] {subprocess.py:93} INFO - [0m01:55:57  16 of 18 START test unique_silver_order_items_order_item_id .................... [RUN]
+[2025-11-13T01:55:57.716+0000] {subprocess.py:93} INFO - [0m01:55:57  13 of 18 PASS unique_dim_product_product_id .................................... [[32mPASS[0m in 0.17s]
+[2025-11-13T01:55:57.722+0000] {subprocess.py:93} INFO - [0m01:55:57  15 of 18 PASS unique_silver_customers_customer_id .............................. [[32mPASS[0m in 0.13s]
+[2025-11-13T01:55:57.730+0000] {subprocess.py:93} INFO - [0m01:55:57  17 of 18 START test unique_silver_orders_order_id .............................. [RUN]
+[2025-11-13T01:55:57.733+0000] {subprocess.py:93} INFO - [0m01:55:57  14 of 18 PASS unique_fct_orders_order_id ....................................... [[32mPASS[0m in 0.16s]
+[2025-11-13T01:55:57.737+0000] {subprocess.py:93} INFO - [0m01:55:57  18 of 18 START test unique_silver_products_product_id .......................... [RUN]
+[2025-11-13T01:55:57.755+0000] {subprocess.py:93} INFO - [0m01:55:57  16 of 18 PASS unique_silver_order_items_order_item_id .......................... [[32mPASS[0m in 0.16s]
+[2025-11-13T01:55:57.888+0000] {subprocess.py:93} INFO - [0m01:55:57  17 of 18 PASS unique_silver_orders_order_id .................................... [[32mPASS[0m in 0.15s]
+[2025-11-13T01:55:57.896+0000] {subprocess.py:93} INFO - [0m01:55:57  18 of 18 PASS unique_silver_products_product_id ................................ [[32mPASS[0m in 0.15s]
+[2025-11-13T01:55:57.959+0000] {subprocess.py:93} INFO - [0m01:55:57
+[2025-11-13T01:55:57.960+0000] {subprocess.py:93} INFO - [0m01:55:57  Finished running 18 tests in 0 hours 0 minutes and 1.21 seconds (1.21s).
+[2025-11-13T01:55:57.985+0000] {subprocess.py:93} INFO - [0m01:55:57
+[2025-11-13T01:55:57.986+0000] {subprocess.py:93} INFO - [0m01:55:57  [32mCompleted successfully[0m
+[2025-11-13T01:55:57.986+0000] {subprocess.py:93} INFO - [0m01:55:57
+[2025-11-13T01:55:57.988+0000] {subprocess.py:93} INFO - [0m01:55:57  Done. PASS=18 WARN=0 ERROR=0 SKIP=0 TOTAL=18
+[2025-11-13T01:55:59.273+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-13T01:55:59.283+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=transform_bronze_to_silver_gold, task_id=dbt_test, execution_date=20251113T015542, start_date=20251113T015554, end_date=20251113T015559
+[2025-11-13T01:55:59.303+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-13T01:55:59.309+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: silver_customers
+    description: "Cleaned customers ready for analytics."
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+  - name: silver_products
+    description: "Normalized product catalog."
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+  - name: silver_orders
+    description: "Order headers enriched with payment metadata."
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - relationships:
+              to: ref('silver_customers')
+              field: customer_id
+  - name: silver_order_items
+    description: "Granular line items with extended amount measures."
+    columns:
+      - name: order_item_id
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        tests:
+          - relationships:
+              to: ref('silver_orders')
+              field: order_id
+      - name: product_id
+        tests:
+          - relationships:
+              to: ref('silver_products')
+              field: product_id

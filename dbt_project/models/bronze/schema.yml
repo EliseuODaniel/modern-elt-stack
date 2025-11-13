@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: bronze_customers
+    description: "Raw customer snapshot copied from the ERP into MinIO (bronze)."
+  - name: bronze_products
+    description: "Raw product catalog as-is from the ERP."
+  - name: bronze_orders
+    description: "Order headers before any business logic adjustments."
+  - name: bronze_order_items
+    description: "Line items tied to each order."
+  - name: bronze_payments
+    description: "Payment events recorded in the ERP."

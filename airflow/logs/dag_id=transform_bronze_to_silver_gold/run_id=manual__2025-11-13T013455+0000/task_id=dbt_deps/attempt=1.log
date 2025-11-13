@@ -1,0 +1,25 @@
+[2025-11-13T01:34:57.463+0000] {logging_mixin.py:188} INFO - Changing /opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:34:55+00:00/task_id=dbt_deps permission to 509
+[2025-11-13T01:34:57.464+0000] {logging_mixin.py:188} INFO - Failed to change /opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:34:55+00:00/task_id=dbt_deps permission to 509: [Errno 1] Operation not permitted: '/opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:34:55+00:00/task_id=dbt_deps'
+[2025-11-13T01:34:57.492+0000] {logging_mixin.py:188} INFO - Changing /opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:34:55+00:00/task_id=dbt_deps permission to 509
+[2025-11-13T01:34:57.493+0000] {logging_mixin.py:188} INFO - Failed to change /opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:34:55+00:00/task_id=dbt_deps permission to 509: [Errno 1] Operation not permitted: '/opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:34:55+00:00/task_id=dbt_deps'
+[2025-11-13T01:34:57.522+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: transform_bronze_to_silver_gold.dbt_deps manual__2025-11-13T01:34:55+00:00 [queued]>
+[2025-11-13T01:34:57.525+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: transform_bronze_to_silver_gold.dbt_deps manual__2025-11-13T01:34:55+00:00 [queued]>
+[2025-11-13T01:34:57.526+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-11-13T01:34:57.532+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): dbt_deps> on 2025-11-13 01:34:55+00:00
+[2025-11-13T01:34:57.536+0000] {standard_task_runner.py:60} INFO - Started process 195 to run task
+[2025-11-13T01:34:57.538+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'transform_bronze_to_silver_gold', 'dbt_deps', 'manual__2025-11-13T01:34:55+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/transform_silver_gold_dbt_dag.py', '--cfg-path', '/tmp/tmpybf73lzz']
+[2025-11-13T01:34:57.540+0000] {standard_task_runner.py:88} INFO - Job 14: Subtask dbt_deps
+[2025-11-13T01:34:57.560+0000] {logging_mixin.py:188} INFO - Changing /opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:34:55+00:00/task_id=dbt_deps permission to 509
+[2025-11-13T01:34:57.561+0000] {logging_mixin.py:188} INFO - Failed to change /opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:34:55+00:00/task_id=dbt_deps permission to 509: [Errno 1] Operation not permitted: '/opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:34:55+00:00/task_id=dbt_deps'
+[2025-11-13T01:34:57.572+0000] {task_command.py:423} INFO - Running <TaskInstance: transform_bronze_to_silver_gold.dbt_deps manual__2025-11-13T01:34:55+00:00 [running]> on host 2fa63170b6f2
+[2025-11-13T01:34:57.602+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-platform' AIRFLOW_CTX_DAG_ID='transform_bronze_to_silver_gold' AIRFLOW_CTX_TASK_ID='dbt_deps' AIRFLOW_CTX_EXECUTION_DATE='2025-11-13T01:34:55+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-13T01:34:55+00:00'
+[2025-11-13T01:34:57.603+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-13T01:34:57.604+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/airflow/dbt && export DBT_PROFILES_DIR=/opt/airflow/dbt && /home/airflow/.local/bin/dbt deps']
+[2025-11-13T01:34:57.609+0000] {subprocess.py:86} INFO - Output:
+[2025-11-13T01:34:58.956+0000] {subprocess.py:93} INFO - [0m01:34:58  Running with dbt=1.7.9
+[2025-11-13T01:34:59.044+0000] {subprocess.py:93} INFO - [0m01:34:59  Warning: No packages were found in packages.yml
+[2025-11-13T01:34:59.054+0000] {subprocess.py:93} INFO - [0m01:34:59  Warning: No packages were found in packages.yml
+[2025-11-13T01:34:59.820+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-13T01:34:59.832+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=transform_bronze_to_silver_gold, task_id=dbt_deps, execution_date=20251113T013455, start_date=20251113T013457, end_date=20251113T013459
+[2025-11-13T01:34:59.881+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-13T01:34:59.890+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

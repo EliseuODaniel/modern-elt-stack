@@ -1,0 +1,157 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: erp_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: erp_user
+      POSTGRES_PASSWORD: erp_password
+      POSTGRES_DB: erp_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./infra/postgres/init:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+
+  minio:
+    image: minio/minio:latest
+    container_name: datalake_minio
+    restart: unless-stopped
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin123
+    command: server /data --console-address ":9001"
+    volumes:
+      - ./infra/minio/data:/data
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+
+  minio-bucket-setup:
+    image: minio/mc:latest
+    container_name: minio_bucket_setup
+    depends_on:
+      - minio
+    entrypoint: ["/bin/sh", "/create_buckets.sh"]
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin123
+      MINIO_BUCKET: datalake
+    volumes:
+      - ./infra/minio/create_buckets.sh:/create_buckets.sh:ro
+
+  dremio:
+    image: dremio/dremio-oss:latest
+    container_name: dremio
+    restart: unless-stopped
+    ports:
+      - "9047:9047"
+      - "31010:31010"
+    environment:
+      - DREMIO_JAVA_SERVER_HEAP=4G
+      - DREMIO_LOCAL_PATH=/opt/dremio/data
+      - DREMIO_LOG_PATH=/var/log/dremio
+    volumes:
+      - dremio_data:/opt/dremio/data
+      - dremio_log:/var/log/dremio
+    depends_on:
+      - minio
+      - postgres
+
+  dremio_init:
+    image: alpine:3.20
+    container_name: dremio_init
+    depends_on:
+      - dremio
+    environment:
+      DREMIO_URL: http://dremio:9047
+      DREMIO_ADMIN_USER: admin
+      DREMIO_ADMIN_PASSWORD: Lakehouse123
+    volumes:
+      - ./scripts/init_dremio.sh:/scripts/init_dremio.sh:ro
+    command: >
+      sh -c "apk add --no-cache curl jq && /scripts/init_dremio.sh"
+
+  jupyter:
+    image: jupyter/minimal-notebook:python-3.11
+    container_name: lakehouse_notebook
+    restart: unless-stopped
+    environment:
+      JUPYTER_TOKEN: elt
+      NB_USER: jovyan
+      NB_UID: "1000"
+      NB_GID: "100"
+    depends_on:
+      - postgres
+      - minio
+    command: >
+      bash -c "pip install --no-cache-dir duckdb ipython-sql boto3 psycopg2-binary && \
+      start-notebook.sh --NotebookApp.allow_origin='*' --NotebookApp.token=$${JUPYTER_TOKEN}"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./dbt_project:/home/jovyan/dbt_project
+    ports:
+      - "8888:8888"
+
+  airflow:
+    build:
+      context: .
+      dockerfile: infra/airflow/Dockerfile
+    container_name: airflow
+    restart: unless-stopped
+    depends_on:
+      - postgres
+      - minio
+    environment:
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'False'
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: sqlite:////opt/airflow/airflow.db
+      AIRFLOW__CORE__FERNET_KEY: wfbpZ6tqii5D8wU3M/ZBPefy8dUQWgDDl7y3T0J8JSA=
+      AIRFLOW_CONN_POSTGRES_ERP: postgresql+psycopg2://erp_user:erp_password@postgres:5432/erp_db
+      AIRFLOW_CONN_MINIO_S3: aws://minioadmin:minioadmin123@?region_name=us-east-1&extra__aws__endpoint_url=http%3A%2F%2Fminio%3A9000
+      AIRFLOW_UID: "50000"
+      MINIO_BUCKET: datalake
+      MINIO_BRONZE_PREFIX: bronze/erp
+      AWS_ACCESS_KEY_ID: minioadmin
+      AWS_SECRET_ACCESS_KEY: minioadmin123
+      AWS_DEFAULT_REGION: us-east-1
+      S3_ENDPOINT_URL: http://minio:9000
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./dbt_project:/opt/airflow/dbt
+    ports:
+      - "8080:8080"
+    command: >
+      bash -c "airflow db migrate && \
+      (airflow users create --username admin --password admin --firstname Data --lastname Engineer --role Admin --email admin@example.com || true) && \
+      airflow scheduler & exec airflow webserver --port 8080"
+
+  dbt_duckdb:
+    build:
+      context: .
+      dockerfile: infra/dbt_duckdb/Dockerfile
+    container_name: dbt_duckdb
+    depends_on:
+      - minio
+    environment:
+      AWS_ACCESS_KEY_ID: minioadmin
+      AWS_SECRET_ACCESS_KEY: minioadmin123
+      AWS_DEFAULT_REGION: us-east-1
+      S3_ENDPOINT_URL: http://minio:9000
+    working_dir: /dbt
+    entrypoint: ["/bin/sh", "-c"]
+    command: ["tail -f /dev/null"]
+    volumes:
+      - ./dbt_project:/dbt
+
+networks:
+  default:
+    name: modern_elt_net
+
+volumes:
+  postgres_data:
+  dremio_data:
+  dremio_log:

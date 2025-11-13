@@ -1,0 +1,7 @@
+graph TD
+  PG[(PostgreSQL ERP)] -->|Airflow extract| Bronze[MinIO Bronze Parquet]
+  Bronze -->|dbt (DuckDB)| Silver[MinIO Silver Parquet]
+  Silver -->|dbt (DuckDB)| Gold[MinIO Gold Parquet]
+  Bronze -->|Reflections| Dremio[Dremio]
+  Silver --> Dremio
+  Gold --> Dremio

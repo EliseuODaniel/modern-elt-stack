@@ -1,0 +1,80 @@
+[2025-11-13T01:44:53.252+0000] {logging_mixin.py:188} INFO - Changing /opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:44:46.757363+00:00/task_id=dbt_run permission to 509
+[2025-11-13T01:44:53.253+0000] {logging_mixin.py:188} INFO - Failed to change /opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:44:46.757363+00:00/task_id=dbt_run permission to 509: [Errno 1] Operation not permitted: '/opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:44:46.757363+00:00/task_id=dbt_run'
+[2025-11-13T01:44:53.280+0000] {logging_mixin.py:188} INFO - Changing /opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:44:46.757363+00:00/task_id=dbt_run permission to 509
+[2025-11-13T01:44:53.281+0000] {logging_mixin.py:188} INFO - Failed to change /opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:44:46.757363+00:00/task_id=dbt_run permission to 509: [Errno 1] Operation not permitted: '/opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:44:46.757363+00:00/task_id=dbt_run'
+[2025-11-13T01:44:53.312+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: transform_bronze_to_silver_gold.dbt_run manual__2025-11-13T01:44:46.757363+00:00 [queued]>
+[2025-11-13T01:44:53.315+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: transform_bronze_to_silver_gold.dbt_run manual__2025-11-13T01:44:46.757363+00:00 [queued]>
+[2025-11-13T01:44:53.315+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-11-13T01:44:53.322+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): dbt_run> on 2025-11-13 01:44:46.757363+00:00
+[2025-11-13T01:44:53.326+0000] {standard_task_runner.py:60} INFO - Started process 3920 to run task
+[2025-11-13T01:44:53.328+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'transform_bronze_to_silver_gold', 'dbt_run', 'manual__2025-11-13T01:44:46.757363+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/transform_silver_gold_dbt_dag.py', '--cfg-path', '/tmp/tmp2xlofds4']
+[2025-11-13T01:44:53.330+0000] {standard_task_runner.py:88} INFO - Job 18: Subtask dbt_run
+[2025-11-13T01:44:53.350+0000] {logging_mixin.py:188} INFO - Changing /opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:44:46.757363+00:00/task_id=dbt_run permission to 509
+[2025-11-13T01:44:53.351+0000] {logging_mixin.py:188} INFO - Failed to change /opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:44:46.757363+00:00/task_id=dbt_run permission to 509: [Errno 1] Operation not permitted: '/opt/airflow/logs/dag_id=transform_bronze_to_silver_gold/run_id=manual__2025-11-13T01:44:46.757363+00:00/task_id=dbt_run'
+[2025-11-13T01:44:53.370+0000] {task_command.py:423} INFO - Running <TaskInstance: transform_bronze_to_silver_gold.dbt_run manual__2025-11-13T01:44:46.757363+00:00 [running]> on host 2fa63170b6f2
+[2025-11-13T01:44:53.398+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-platform' AIRFLOW_CTX_DAG_ID='transform_bronze_to_silver_gold' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2025-11-13T01:44:46.757363+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-13T01:44:46.757363+00:00'
+[2025-11-13T01:44:53.399+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-13T01:44:53.400+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/airflow/dbt && export DBT_PROFILES_DIR=/opt/airflow/dbt && /home/airflow/.local/bin/dbt run']
+[2025-11-13T01:44:53.405+0000] {subprocess.py:86} INFO - Output:
+[2025-11-13T01:44:54.538+0000] {subprocess.py:93} INFO - [0m01:44:54  Running with dbt=1.7.9
+[2025-11-13T01:44:54.791+0000] {subprocess.py:93} INFO - [0m01:44:54  Registered adapter: duckdb=1.7.2
+[2025-11-13T01:44:55.312+0000] {subprocess.py:93} INFO - [0m01:44:55  Found 12 models, 18 tests, 0 sources, 0 exposures, 0 metrics, 391 macros, 0 groups, 0 semantic models
+[2025-11-13T01:44:55.317+0000] {subprocess.py:93} INFO - [0m01:44:55
+[2025-11-13T01:44:55.702+0000] {subprocess.py:93} INFO - [0m01:44:55  Concurrency: 4 threads (target='dev')
+[2025-11-13T01:44:55.703+0000] {subprocess.py:93} INFO - [0m01:44:55
+[2025-11-13T01:44:55.712+0000] {subprocess.py:93} INFO - [0m01:44:55  1 of 12 START sql view model main_bronze.bronze_customers ...................... [RUN]
+[2025-11-13T01:44:55.714+0000] {subprocess.py:93} INFO - [0m01:44:55  2 of 12 START sql view model main_bronze.bronze_order_items .................... [RUN]
+[2025-11-13T01:44:55.715+0000] {subprocess.py:93} INFO - [0m01:44:55  3 of 12 START sql view model main_bronze.bronze_orders ......................... [RUN]
+[2025-11-13T01:44:55.717+0000] {subprocess.py:93} INFO - [0m01:44:55  4 of 12 START sql view model main_bronze.bronze_payments ....................... [RUN]
+[2025-11-13T01:44:56.049+0000] {subprocess.py:93} INFO - [0m01:44:56  4 of 12 OK created sql view model main_bronze.bronze_payments .................. [[32mOK[0m in 0.32s]
+[2025-11-13T01:44:56.066+0000] {subprocess.py:93} INFO - [0m01:44:56  3 of 12 OK created sql view model main_bronze.bronze_orders .................... [[32mOK[0m in 0.34s]
+[2025-11-13T01:44:56.067+0000] {subprocess.py:93} INFO - [0m01:44:56  5 of 12 START sql view model main_bronze.bronze_products ....................... [RUN]
+[2025-11-13T01:44:56.069+0000] {subprocess.py:93} INFO - [0m01:44:56  1 of 12 OK created sql view model main_bronze.bronze_customers ................. [[32mOK[0m in 0.34s]
+[2025-11-13T01:44:56.095+0000] {subprocess.py:93} INFO - [0m01:44:56  2 of 12 OK created sql view model main_bronze.bronze_order_items ............... [[32mOK[0m in 0.37s]
+[2025-11-13T01:44:56.096+0000] {subprocess.py:93} INFO - [0m01:44:56  6 of 12 START sql external model main_silver.silver_orders ..................... [RUN]
+[2025-11-13T01:44:56.101+0000] {subprocess.py:93} INFO - [0m01:44:56  7 of 12 START sql external model main_silver.silver_customers .................. [RUN]
+[2025-11-13T01:44:56.112+0000] {subprocess.py:93} INFO - [0m01:44:56  8 of 12 START sql external model main_silver.silver_order_items ................ [RUN]
+[2025-11-13T01:44:56.339+0000] {subprocess.py:93} INFO - [0m01:44:56  5 of 12 OK created sql view model main_bronze.bronze_products .................. [[32mOK[0m in 0.26s]
+[2025-11-13T01:44:56.343+0000] {subprocess.py:93} INFO - [0m01:44:56  9 of 12 START sql external model main_silver.silver_products ................... [RUN]
+[2025-11-13T01:44:56.482+0000] {subprocess.py:93} INFO - [0m01:44:56  7 of 12 ERROR creating sql external model main_silver.silver_customers ......... [[31mERROR[0m in 0.37s]
+[2025-11-13T01:44:56.483+0000] {subprocess.py:93} INFO - [0m01:44:56  8 of 12 ERROR creating sql external model main_silver.silver_order_items ....... [[31mERROR[0m in 0.36s]
+[2025-11-13T01:44:56.491+0000] {subprocess.py:93} INFO - [0m01:44:56  10 of 12 SKIP relation main_gold.dim_customer .................................. [[33mSKIP[0m]
+[2025-11-13T01:44:56.545+0000] {subprocess.py:93} INFO - [0m01:44:56  6 of 12 ERROR creating sql external model main_silver.silver_orders ............ [[31mERROR[0m in 0.44s]
+[2025-11-13T01:44:56.549+0000] {subprocess.py:93} INFO - [0m01:44:56  11 of 12 SKIP relation main_gold.fct_orders .................................... [[33mSKIP[0m]
+[2025-11-13T01:44:56.612+0000] {subprocess.py:93} INFO - [0m01:44:56  9 of 12 ERROR creating sql external model main_silver.silver_products .......... [[31mERROR[0m in 0.27s]
+[2025-11-13T01:44:56.615+0000] {subprocess.py:93} INFO - [0m01:44:56  12 of 12 SKIP relation main_gold.dim_product ................................... [[33mSKIP[0m]
+[2025-11-13T01:44:56.676+0000] {subprocess.py:93} INFO - [0m01:44:56
+[2025-11-13T01:44:56.677+0000] {subprocess.py:93} INFO - [0m01:44:56  Finished running 5 view models, 7 external models in 0 hours 0 minutes and 1.36 seconds (1.36s).
+[2025-11-13T01:44:56.709+0000] {subprocess.py:93} INFO - [0m01:44:56
+[2025-11-13T01:44:56.710+0000] {subprocess.py:93} INFO - [0m01:44:56  [31mCompleted with 4 errors and 0 warnings:[0m
+[2025-11-13T01:44:56.711+0000] {subprocess.py:93} INFO - [0m01:44:56
+[2025-11-13T01:44:56.712+0000] {subprocess.py:93} INFO - [0m01:44:56    Runtime Error in model silver_customers (models/silver/silver_customers.sql)
+[2025-11-13T01:44:56.713+0000] {subprocess.py:93} INFO -   Catalog Error: Table with name s3://datalake/silver/erp/customers does not exist!
+[2025-11-13T01:44:56.713+0000] {subprocess.py:93} INFO -   Did you mean "main_bronze.bronze_customers"?
+[2025-11-13T01:44:56.714+0000] {subprocess.py:93} INFO - [0m01:44:56
+[2025-11-13T01:44:56.715+0000] {subprocess.py:93} INFO - [0m01:44:56    Runtime Error in model silver_order_items (models/silver/silver_order_items.sql)
+[2025-11-13T01:44:56.715+0000] {subprocess.py:93} INFO -   Catalog Error: Table with name s3://datalake/silver/erp/order_items does not exist!
+[2025-11-13T01:44:56.716+0000] {subprocess.py:93} INFO -   Did you mean "main_bronze.bronze_order_items"?
+[2025-11-13T01:44:56.716+0000] {subprocess.py:93} INFO - [0m01:44:56
+[2025-11-13T01:44:56.717+0000] {subprocess.py:93} INFO - [0m01:44:56    Runtime Error in model silver_orders (models/silver/silver_orders.sql)
+[2025-11-13T01:44:56.718+0000] {subprocess.py:93} INFO -   Catalog Error: Table with name s3://datalake/silver/erp/orders does not exist!
+[2025-11-13T01:44:56.718+0000] {subprocess.py:93} INFO -   Did you mean "information_schema.tables"?
+[2025-11-13T01:44:56.719+0000] {subprocess.py:93} INFO - [0m01:44:56
+[2025-11-13T01:44:56.719+0000] {subprocess.py:93} INFO - [0m01:44:56    Runtime Error in model silver_products (models/silver/silver_products.sql)
+[2025-11-13T01:44:56.720+0000] {subprocess.py:93} INFO -   Catalog Error: Table with name s3://datalake/silver/erp/products does not exist!
+[2025-11-13T01:44:56.721+0000] {subprocess.py:93} INFO -   Did you mean "main_bronze.bronze_products"?
+[2025-11-13T01:44:56.721+0000] {subprocess.py:93} INFO - [0m01:44:56
+[2025-11-13T01:44:56.723+0000] {subprocess.py:93} INFO - [0m01:44:56  Done. PASS=5 WARN=0 ERROR=4 SKIP=3 TOTAL=12
+[2025-11-13T01:44:57.690+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-11-13T01:44:57.694+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-11-13T01:44:57.697+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=transform_bronze_to_silver_gold, task_id=dbt_run, execution_date=20251113T014446, start_date=20251113T014453, end_date=20251113T014457
+[2025-11-13T01:44:57.704+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 18 for task dbt_run (Bash command failed. The command returned a non-zero exit code 1.; 3920)
+[2025-11-13T01:44:57.716+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-13T01:44:57.724+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

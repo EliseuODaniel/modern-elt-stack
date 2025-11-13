@@ -1,0 +1,20 @@
+name: 'modern_elt_dbt'
+version: '1.0.0'
+config-version: 2
+
+profile: 'duckdb_profile'
+
+model-paths: ['models']
+seed-paths: []
+target-path: 'target'
+clean-targets: ['target', 'dbt_packages']
+
+models:
+  modern_elt_dbt:
+    +materialized: table
+    bronze:
+      +schema: bronze
+    silver:
+      +schema: silver
+    gold:
+      +schema: gold
