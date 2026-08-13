@@ -2,6 +2,12 @@
 
 This repository spins up a fully containerized ELT playground that mimics a modern data platform: PostgreSQL acts as an ERP source, Airflow orchestrates jobs, MinIO stores Parquet data across bronze/silver/gold zones, dbt + DuckDB perform transformations, and JupyterLab + DuckDB notebooks let you explore the curated datasets.
 
+## Project status
+
+This is a local educational sandbox and portfolio reference, not a production deployment. The source-controlled surface consists of Docker configuration, DAGs, dbt models, bootstrap scripts, and documentation. Generated dbt artifacts, DuckDB files, Dremio metadata/logs, Python caches, and local profiles are intentionally excluded from Git and are recreated by the stack.
+
+The credentials shown below are development defaults for an isolated local environment. Change them before exposing any service beyond localhost, and never reuse them in a real environment.
+
 ```mermaid
 flowchart LR
   ERP[PostgreSQL ERP]
@@ -179,3 +185,7 @@ docker compose down -v
 Enjoy exploring a modern ELT workflow end-to-end!
 
 > Para instruções mais detalhadas (comandos, troubleshooting e snippets), veja também `doc/README.md` e `docs/operations.md`.
+
+## License
+
+MIT — see [LICENSE](LICENSE).

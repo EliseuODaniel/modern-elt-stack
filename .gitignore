@@ -1,5 +1,25 @@
-# Airflow logs
-airflow/logs/
+# Python
+__pycache__/
+*.py[cod]
+.venv/
 
-# Dados do MinIO (apenas o que é gerado em runtime)
-infra/minio/data/
+# dbt and DuckDB runtime state
+dbt_project/profiles.yml
+dbt_project/target/
+dbt_project/logs/
+dbt_project/duckdb/*
+!dbt_project/duckdb/.gitkeep
+*.duckdb
+*.duckdb.wal
+
+# Dremio runtime state
+infra/dremio/data/*
+!infra/dremio/data/.gitkeep
+infra/dremio/log/*
+!infra/dremio/log/.gitkeep
+
+# Local configuration and OS files
+.env
+.env.*
+!.env.example
+.DS_Store
